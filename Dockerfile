@@ -12,7 +12,7 @@ RUN npm ci && npm cache clean --force
 # Copy application files
 COPY . .
 
-# Build the application
+# Build the application (using --no-turbo to force webpack)
 RUN npm run build
 
 # Create directories for component storage

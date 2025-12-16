@@ -2,20 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   
-  // Mark esbuild as external for server components (Next.js 16)
-  serverComponentsExternalPackages: [
-    'esbuild',
-    '@esbuild/darwin-arm64',
-    '@esbuild/darwin-x64',
-    '@esbuild/linux-arm64',
-    '@esbuild/linux-x64',
-    '@esbuild/win32-arm64',
-    '@esbuild/win32-x64',
-  ],
-
-  // Use webpack instead of Turbopack for custom configuration
-  // Add empty turbopack config to silence the warning
-  turbopack: {},
+  // Note: Turbopack is disabled via --no-turbo flag in build script
+  // This is needed because Turbopack doesn't support webpack config for esbuild externalization
 
   // CORS headers for WordPress integration
   async headers() {
