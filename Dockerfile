@@ -12,7 +12,9 @@ RUN npm ci && npm cache clean --force
 # Copy application files
 COPY . .
 
-# Build the application (using --no-turbo to force webpack)
+# Build the application
+# Next.js 16 uses Turbopack by default, but webpack config should force webpack
+# If Turbopack is still used, the webpack config will handle esbuild externalization
 RUN npm run build
 
 # Create directories for component storage

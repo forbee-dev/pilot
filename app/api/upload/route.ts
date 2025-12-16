@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { handleComponentUpload } from '@/lib/upload-handler';
 import { ensureDirectories } from '@/lib/storage';
 
 // Configure body size limit for Next.js 16
@@ -22,6 +21,8 @@ export async function POST(request: NextRequest) {
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
+    // Dynamic import to avoid Turbopack analysis issues
+    const { handleComponentUpload } = await import('@/lib/upload-handler');
     const result = await handleComponentUpload(buffer, componentName || undefined);
 
     return NextResponse.json({

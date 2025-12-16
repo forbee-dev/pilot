@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   
-  // Note: Turbopack is disabled via --no-turbo flag in build script
-  // This is needed because Turbopack doesn't support webpack config for esbuild externalization
+  // Having a webpack() function should force Next.js to use webpack instead of Turbopack
+  // This is required because Turbopack doesn't support our esbuild externalization needs
 
   // CORS headers for WordPress integration
   async headers() {
@@ -27,7 +27,9 @@ const nextConfig = {
   },
 
   // Webpack configuration for handling esbuild
-  webpack: (config, { isServer }) => {
+  // This webpack function forces Next.js to use webpack instead of Turbopack
+  webpack: (config, { isServer, webpack }) => {
+    // Always use webpack (not Turbopack) when this config exists
     if (isServer) {
       // Externalize esbuild and its platform-specific packages
       config.externals = config.externals || [];

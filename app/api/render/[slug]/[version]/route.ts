@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getComponentMetadata } from '@/lib/storage';
-import { renderComponent } from '@/lib/bundler';
 
 export async function GET(
   request: Request,
@@ -28,6 +27,8 @@ export async function GET(
       );
     }
 
+    // Dynamic import to avoid Turbopack analysis
+    const { renderComponent } = await import('@/lib/bundler');
     const html = await renderComponent(version.ssrPath, props);
 
     return NextResponse.json({
