@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   
-  // Having a webpack() function should force Next.js to use webpack instead of Turbopack
-  // This is required because Turbopack doesn't support our esbuild externalization needs
+  // Add empty turbopack config to silence the warning
+  // We use webpack for esbuild externalization, but Next.js 16 requires this
+  turbopack: {},
 
   // CORS headers for WordPress integration
   async headers() {
