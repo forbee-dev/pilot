@@ -1,0 +1,15 @@
+{
+  "name": "microfe-wordpress-plugin",
+  "version": "1.0.0",
+  "description": "WordPress plugin for MicroFE components",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^26.0.0"
+  }
+}
+
+

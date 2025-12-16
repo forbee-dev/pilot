@@ -1,0 +1,23 @@
+# Railway ignore file
+node_modules/
+.next/
+.git/
+.gitignore
+*.log
+.DS_Store
+.env*.local
+.vercel
+
+# Development files
+example-component/
+wordpress-plugin/
+scripts/
+*.md
+!README.md
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+

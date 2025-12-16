@@ -1,0 +1,12 @@
+.microfe-component-block {
+  padding: 1rem;
+  border: 1px dashed #ccc;
+  min-height: 100px;
+  position: relative;
+}
+
+.microfe-component-block .components-spinner {
+  margin: 2rem auto;
+}
+
+

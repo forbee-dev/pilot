@@ -1,0 +1,7 @@
+{
+  "core": "WordPress/WordPress#latest",
+  "plugins": [ "." ],
+  "themes": [ "WordPress/theme-experiments#tt1-blocks" ]
+}
+
+

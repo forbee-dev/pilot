@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "microfe/react-component",
+  "title": "React Component",
+  "category": "widgets",
+  "icon": "admin-plugins",
+  "description": "Insert a React component from MicroFE",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "component": {
+      "type": "string",
+      "default": ""
+    },
+    "version": {
+      "type": "string",
+      "default": ""
+    },
+    "props": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}
